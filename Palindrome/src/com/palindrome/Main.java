@@ -6,16 +6,29 @@ public class Main
 {
     public static void main(String[] args)
     {
-        String charEntree, palindrome = "";
+        String palindrome = "";
         Scanner in = new Scanner(System.in);
 
         // Demander a l'utilisateur d'entrer sa chaine de charactere
         System.out.println("Enter a string to check if it is a palindrome: ");
-        palindrome = trouverPLP(in.nextLine());
-        System.out.printf("Longueur maximale de palindrome PLP = %d\n", palindrome.length());
-        System.out.printf("Palindrome PLP trouvé = '%s'", palindrome);
+        palindrome = in.nextLine();
+        if (isAlphabet(palindrome)) {
+            palindrome = trouverPLP(in.nextLine());
+            System.out.printf("Longueur maximale de palindrome PLP = %d\n", palindrome.length());
+            System.out.printf("Palindrome PLP trouvé = '%s'", palindrome);
+        }
+        else
+            System.out.println("Veuillez entrer une chaine de caracteres qui contient des lettres (a-z)");
     }
-    
+
+    // Fonction qui verifie la chaine de caracteres est seulement compose de lettre
+    // Parametre: string de l'utilisateur entree
+    public static boolean isAlphabet(String s) {
+        return s.matches("[a-zA-Z]+");
+    }
+
+    // Fonction qui permet de verife si la chaine est un palindrome et regarder le plus long
+    // Parametre: string de l'utilisateur entree
     public static String trouverPLP(String s)
     {
         if (s.isEmpty()) return null;
@@ -68,6 +81,3 @@ public class Main
         return plp;
     }
 }
-
-// Strings to tests
-// abcdbcmmcba
