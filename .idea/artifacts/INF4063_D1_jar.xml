@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="INF4063-D1:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/INF4063_D1_jar</output-path>
+    <root id="archive" name="INF4063-D1.jar">
+      <element id="module-output" name="INF4063-D1" />
+    </root>
+  </artifact>
+</component>
